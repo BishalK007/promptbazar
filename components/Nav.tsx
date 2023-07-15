@@ -4,22 +4,23 @@ import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import {signIn, signOut, getProviders, useSession} from  'next-auth/react';
+import {signIn, signOut, getProviders, useSession, LiteralUnion, ClientSafeProvider} from  'next-auth/react';
 import Provider from './Provider';
+import { BuiltInProviderType } from 'next-auth/providers';
 
 export default function Nav() {
-  const isUserLoggedIn = true;
-  const [providers, setProviders] = useState(null);
+  const {data:session} = useSession();
+  const [providers, setProviders] = useState<Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider> | null>(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
 
   useEffect(()=>{
-    const setProviders = async () =>{
+    const setUpProviders = async () =>{
       const response = await getProviders();
       console.log(response);
       setProviders(response);
     }
-    setProviders();
+    setUpProviders();
   }, []);
 
   return(
@@ -43,7 +44,7 @@ export default function Nav() {
        /* */}
       <div className="sm:flex hidden">
         {
-        isUserLoggedIn ? (
+        session?.user ? (
           <div className="flex gap-3 md:gap-5">
             {/* */
              /*__________________________ Create Post  ______________________ */
@@ -56,13 +57,13 @@ export default function Nav() {
              /*__________________________ Sign Out  ______________________ */
              /* */}
             
-            <button className="outline_btn" type="button" onClick={signOut}> Sign Out</button>
+            <button className="outline_btn" type="button" onClick={(e) => { e.preventDefault(); signOut(); }}> Sign Out</button>
             {/* */
-             /*__________________________ Profile  ______________________ */
+             /*__________________________ Profile Picture ______________________ */
              /* */}
             <Link href="/profile">
               <Image 
-              src = '/assets/images/logo.svg' 
+              src = {session?.user.image || 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'}
               alt='Profile Logo' 
               width={40} 
               height={40}
@@ -95,7 +96,7 @@ export default function Nav() {
        /*__________________________ Mobile Nav  ______________________ */
        /* */}
       <div className="sm:hidden flex relative">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             {/* */
              /*__________________________ Profile Picture  ______________________ */
