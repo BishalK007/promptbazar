@@ -12,7 +12,8 @@ export default function Form({type, post, setPost, submitting, handleSubmit}:{ty
         <p className="desc text-lext max-w-md">
         {type} and Share Your Next Masterpiece with AI-Powered Inspiration
         </p>
-        <form className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
+        <form className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism" onSubmit={handleSubmit}>
+            
             {/* */
              /*__________________________ Prompt Title  ______________________ */
              /* */}

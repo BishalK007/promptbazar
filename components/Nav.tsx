@@ -10,6 +10,7 @@ import { BuiltInProviderType } from 'next-auth/providers';
 
 export default function Nav() {
   const {data:session} = useSession();
+  // console.log(`hii ${session}`);
   const [providers, setProviders] = useState<Record<LiteralUnion<BuiltInProviderType, string>, ClientSafeProvider> | null>(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -17,7 +18,7 @@ export default function Nav() {
   useEffect(()=>{
     const setUpProviders = async () =>{
       const response = await getProviders();
-      console.log(response);
+      // console.log(response);
       setProviders(response);
     }
     setUpProviders();
@@ -44,7 +45,9 @@ export default function Nav() {
        /* */}
       <div className="sm:flex hidden">
         {
-        session?.user ? (
+        
+        session?.user ? 
+        (
           <div className="flex gap-3 md:gap-5">
             {/* */
              /*__________________________ Create Post  ______________________ */

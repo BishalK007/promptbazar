@@ -20,8 +20,9 @@ const handler = NextAuth({
             clientSecret:googleClientSecret,
         })
     ],
+
     callbacks:{
-        async session({session}){
+        async session({session} ){
             const sessionUserVariable = session.user ? session.user : null;
             if(!sessionUserVariable){
                 throw new Error('Missing Session User for Google provider');
@@ -30,6 +31,7 @@ const handler = NextAuth({
                 email:sessionUserVariable.email ,
             })
             sessionUserVariable.id = sessionUser._id.toString();
+            // console.log(session)
             return session;
         },
         async signIn({profile}) {
@@ -38,7 +40,7 @@ const handler = NextAuth({
                 //
                 // ______________________ User Already Exists ______________________//
                 //
-                const userExists = await User.findOne({email:profile.email})
+                const userExists = await User.findOne({email:profile?.email})
                 //
                 // ______________________ User Creation ______________________//
                 //
