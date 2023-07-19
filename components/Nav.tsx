@@ -66,7 +66,7 @@ export default function Nav() {
              /* */}
             <Link href="/profile">
               <Image 
-              src = {session?.user.image || 'https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png'}
+              src = {session?.user.image || '/assets/images/profile.png'}
               alt='Profile Logo' 
               width={40} 
               height={40}

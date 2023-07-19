@@ -35,6 +35,7 @@ const handler = NextAuth({
             return session;
         },
         async signIn({profile}) {
+            
             try {
                 await connectToDB();
                 //
