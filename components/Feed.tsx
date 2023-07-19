@@ -2,7 +2,13 @@
 import {useState, useEffect} from 'react'
 import PromptCard from './PromptCard';
 
-const PromptCardList = ({data, handleTagClick}) => {
+
+type PromptCardListProps = {
+  data: Array<any>;
+  handleTagClick: () => void;
+};
+
+const PromptCardList = ({data, handleTagClick} : PromptCardListProps) => {
   return (
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
@@ -19,7 +25,7 @@ const PromptCardList = ({data, handleTagClick}) => {
 export default function Feed() {
   const [searchText, setSearchText] = useState('');
   const [posts, setposts] = useState([])
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     
   }
   

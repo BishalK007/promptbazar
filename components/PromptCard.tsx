@@ -5,8 +5,15 @@ import Image from 'next/image'
 import {useSession} from 'next-auth/react'
 import { usePathname, useRouter} from 'next/navigation'
 
+type PromptCardProps = {
+  post: any;
+  handleTagClick: any;
+  handleEdit?: any;
+  handleDelete?: any;
+}
 
-export default function PromptCard({post, handleTagClick, handleEdit, handleDelete}) {
+
+export default function PromptCard({post, handleTagClick, handleEdit, handleDelete} : PromptCardProps) {
 
   const [copied, setCopied] = useState('')
 
