@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
+import { useState, useEffect, SyntheticEvent } from "react";
+// import { useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
@@ -27,9 +27,9 @@ const EditPrompt =  () => {
     if(promptId) getPromptDetails()
   },[promptId])
 
-  const updatePrompt = async (e) => {
+  const updatePrompt = async (event : SyntheticEvent) => {
     // console.log(session)
-    e.preventDefault();
+    event.preventDefault();
     setIsSubmitting(true);
 
     if(!promptId) return alert('Missing PromptId')
@@ -48,7 +48,7 @@ const EditPrompt =  () => {
         router.push("/");
       }
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     } finally {
       setIsSubmitting(false);
     }

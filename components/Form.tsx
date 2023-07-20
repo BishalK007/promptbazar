@@ -2,13 +2,15 @@ import { useState, SyntheticEvent } from "react";
 import Link from "next/link";
 import "@styles/globals.css";
 
+interface PostState {
+  prompt: string;
+  tag: string;
+}
+
 interface FormProps {
   type: string;
-  post: {
-    prompt: string;
-    tag: string;
-  };
-  setPost: (post: { prompt?: string; tag?: string }) => void;
+  post: PostState; // Update to require prompt and tag
+  setPost: (post: PostState) => void; // Update to require prompt and tag
   submitting: boolean;
   handleSubmit: (event: SyntheticEvent) => void;
 }

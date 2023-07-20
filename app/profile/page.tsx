@@ -5,28 +5,35 @@ import { useRouter } from 'next/navigation';
 
 import Profile from "@components/Profile";
 
+interface Post {
+  _id: string; // Assuming '_id' is of type string, change it accordingly if needed
+  // Other properties of the 'post' object go here
+}
+
 export default function MyProfile() {
   const router = useRouter();
   const { data: session } = useSession();
+  const userSession = session as { user: { id: string } | null | undefined };
 
-  const [myPosts, setMyPosts] = useState([]);
+  const [myPosts, setMyPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+      const response = await fetch(`/api/users/${userSession?.user?.id}/posts`);
       const data = await response.json();
+      console.log(data)
 
       setMyPosts(data);
     };
 
-    if (session?.user.id) fetchPosts();
-  }, [session?.user.id]);
+    if (userSession?.user?.id) fetchPosts();
+  }, [userSession?.user?.id]);
 
-  const handleEdit = (post) => {
+  const handleEdit = (post : Post) => {
     router.push(`/update-prompt?id=${post._id}`);
   };
 
-  const handleDelete = async (post) => {
+  const handleDelete = async (post : Post) => {
     const hasConfirmed = confirm(
       "Are you sure you want to delete this prompt?"
     );
