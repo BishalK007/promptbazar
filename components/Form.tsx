@@ -36,7 +36,7 @@ export default function Form({type, post, setPost, submitting, handleSubmit}:{ty
             <label htmlFor="">
                 <span className="font-satisfy font-semibold text-base text-grey-700" >
                     Tag
-                    {" "};
+                    {" "}
                     <span className="font-inter">
                         (#WebDev, #idea, #ChatGPT)
                     </span>
