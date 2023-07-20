@@ -33,12 +33,12 @@ export default function Nav() {
       <Link className="flex gap-2 flex-center" href="/">
         <Image 
         src = '/assets/images/logo.svg'
-        alt='Prompy Logo'
+        alt='PromptBazaar Logo'
         className='object-contain'
         height={80}
         width={80}
         />
-        <p className="logo_text">Prompy</p>
+        <p className="logo_text">PromptBazaar</p>
       </Link>
       {/* */
        /*__________________________ Desktop Nav  ______________________ */

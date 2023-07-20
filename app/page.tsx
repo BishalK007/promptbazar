@@ -12,7 +12,7 @@ export default function Home() {
             <span className="blue_gradient text-center">AI Prompts</span>
         </h1>
         <p className="desc text-center">
-        &ldquo;Discover endless creative possibilities with PROMPY - the AI-powered prompts archive. 
+        &ldquo;Discover endless creative possibilities with PROMPTBAZAAR - the AI-powered prompts archive. 
         Unleash your imagination and
          kickstart your writing, art, or any other project with prompts made by the community.&rdquo;
         </p>
