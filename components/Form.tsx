@@ -38,13 +38,13 @@ export default function Form({type, post, setPost, submitting, handleSubmit}:{ty
                     Tag
                     {" "}
                     <span className="font-inter">
-                        (#WebDev, #idea, #ChatGPT)
+                        (&#35;WebDev, &#35;idea, &#35;ChatGPT)
                     </span>
                 </span>
                 <input value={post.tag} onChange={(event) => {
                     setPost({...post, tag:event.target.value})
                 }}
-                placeholder="#tag"
+                placeholder="&#35;tag"
                 required
                   className="form_input"/>
             </label>
