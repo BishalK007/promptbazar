@@ -31,7 +31,7 @@ export default function Feed() {
   
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`${window.location.origin}/api/prompt`);
+      const response = await fetch(`https://promptbazaar.vercel.app/api/prompt`);
       const data = await response.json();
       console.log(data);
       setposts(data);
