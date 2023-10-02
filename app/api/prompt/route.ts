@@ -10,7 +10,9 @@ export const GET = async (request: Request): Promise<Response> => {
         return new Response(JSON.stringify(prompts), {
             status: 200,
             headers: {
-                'Cache-Control': 'no-store',
+                'Cache-Control': 'public, s-maxage=1',
+                'CDN-Cache-Control': 'public, s-maxage=1',
+                'Vercel-CDN-Cache-Control': 'public, s-maxage=1',
             },
         })
     } catch (error) {
