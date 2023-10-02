@@ -9,6 +9,7 @@ export const GET = async (request: Request): Promise<Response> => {
 
         return new Response(JSON.stringify(prompts), {
             status: 200,
+            // TO NOT CACHE POST RESPONSE IN VERCEL EDGE NETWORK CACHE
             headers: {
                 'Cache-Control': 'public, s-maxage=1',
                 'CDN-Cache-Control': 'public, s-maxage=1',
