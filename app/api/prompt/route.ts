@@ -11,9 +11,10 @@ export const GET = async (request: Request): Promise<Response> => {
             status: 200,
             // TO NOT CACHE POST RESPONSE IN VERCEL EDGE NETWORK CACHE
             headers: {
-                'Cache-Control': 'public, s-maxage=1',
-                'CDN-Cache-Control': 'public, s-maxage=1',
-                'Vercel-CDN-Cache-Control': 'public, s-maxage=1',
+                  'cache' : 'no-store', 
+               // 'Cache-Control': 'public, s-maxage=1',
+               // 'CDN-Cache-Control': 'public, s-maxage=1',
+                //'Vercel-CDN-Cache-Control': 'public, s-maxage=1',
             },
         })
     } catch (error) {
