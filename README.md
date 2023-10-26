@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![repo-banner](https://i.postimg.cc/c18TDhdK/promptbazaar.jpg)
+
+# Prompt Bazaar
+
+**Prompt Bazaar** is a website where users can share and find AI prompts for a variety of tasks, such as generating text, translating languages, writing different kinds of creative content, and answering questions in an informative way.
+
+## Features
+
+- Browse and search for prompts by category, popularity, or rating
+- Submit your own prompts for other users to use
 
 ## Getting Started
 
-First, run the development server:
+To use Prompt Bazaar, simply create an account and start browsing the prompts. You can filter prompts by tags, and you can also search for specific keywords. When you find a prompt that you like, you can click on it to view more information and to try it out for yourself.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Submitting Your Own Prompts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To submit your own prompts, simply click on the "Create a post" button and fill out the form. Be sure to include a clear and concise title, description, and category for your prompt. You can also include a link to a source if your prompt is based on an existing work.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technical Details
 
-## Learn More
+Prompt Bazaar is built with **Next.js** and **MongoDB**. Next.js is a React framework that allows for server-side rendering and static site generation. MongoDB is a NoSQL database that is well-suited for storing and managing prompts.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Prompt Bazaar is deployed to **Vercel**. Vercel is a cloud platform for hosting and deploying Next.js applications.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+Prompt Bazaar is an open source project. You can contribute to the project by submitting pull requests on [GitHub](https://github.com/promptbazar).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Prompt Bazaar is licensed under the **MIT license**.
