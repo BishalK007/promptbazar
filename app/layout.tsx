@@ -3,9 +3,16 @@ import "@styles/globals.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 import type { Session } from "next-auth";
-export const metadata = {
+import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Promptbazaar",
   description: "Discover endless creative possibilities with PROMPTBAZAAR",
+  icons: {
+    icon: '/assets/favicon.png',
+    apple: '/assets/favicon-apple.png'
+  }
 };
 
 

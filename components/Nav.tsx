@@ -32,11 +32,12 @@ export default function Nav() {
 
       <Link className="flex gap-2 flex-center" href="/">
         <Image
-          src='/assets/images/logo.svg'
+          src='/assets/images/logo.png'
           alt='PromptBazaar Logo'
           className='object-contain'
-          height={80}
-          width={80}
+          height={60}
+          width={60}
+          style={{ borderRadius: '50%' }}
         />
         <p className="logo_text">PromptBazaar</p>
       </Link>
@@ -106,7 +107,7 @@ export default function Nav() {
              /* */}
 
             <Image
-              src='/assets/images/logo.svg'
+              src={session?.user.image || '/assets/images/profile.png'}
               alt='Profile Logo'
               width={40}
               height={40}
